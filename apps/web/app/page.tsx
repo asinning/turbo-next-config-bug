@@ -1,4 +1,5 @@
 import Image, { type ImageProps } from "next/image";
+import config from 'config';
 import { Button } from "@repo/ui/button";
 import styles from "./page.module.css";
 
@@ -19,6 +20,7 @@ const ThemeImage = (props: Props) => {
 };
 
 export default function Home() {
+  const configValue = config.key;
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -36,6 +38,7 @@ export default function Home() {
             Get started by editing <code>apps/web/app/page.tsx</code>
           </li>
           <li>Save and see your changes instantly.</li>
+          <li>configValue is {configValue}</li>
         </ol>
 
         <div className={styles.ctas}>
